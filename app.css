@@ -1,0 +1,137 @@
+/* ======= ALL ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #394880;
+  height: 100vh;
+}
+
+/* ======= CONTAINER ====== */
+.container {
+  margin: 0 auto;
+  text-align: center;
+  padding: 2.5rem;
+  max-width: 1000px;
+}
+
+.container h1 {
+  color: white;
+}
+
+.container h1 span {
+  color: rgb(255, 208, 0);
+}
+
+.container input {
+  outline: none;
+  border: none;
+
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+
+  font-size: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+}
+
+#searchWrapper {
+  position: relative;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+#searchWrapper::after {
+  content: '🔍';
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+/* ======= LIST ====== */
+#charactersList {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.character {
+  list-style-type: none;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  border-radius: 0.5rem;
+  padding: 0.635rem 1.25rem;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+      'name image'
+      'house image'
+      'birth image'
+      'ancestry image'
+      'patronus image';
+  text-align: left;
+}
+
+/* === animation === */
+.character:hover {
+  animation: move 0.5s;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.character > h2 {
+  grid-area: name;
+  color: #394880;
+}
+
+.character > house {
+  grid-area: house;
+}
+
+.character > birth {
+  grid-area: birth;
+}
+
+.character > ancestry {
+  grid-area: ancestry;
+}
+
+.character > patronus {
+  grid-area: patronus;
+}
+
+.character > img {
+  grid-area: image;
+  max-height: 100px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* ======= MOBILE ====== */
+@media (max-width: 400px) {
+  .container {
+    padding: 2.5rem 1.5rem;
+  }
+
+  #charactersList {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
