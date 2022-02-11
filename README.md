@@ -11,5 +11,7 @@ There are some things that I learned:
 - JavaScript array **`filter()`** method;
 - Case insensitive search (**`toLowerCase()`**).
 
+:mag_right: See more details [HERE](https://raissamoreira.github.io/Search-Bar-Harry-Potter/)!!!
+
 ### Preview :smile:
 ![Image Preview](https://github.com/RaissaMoreira/Search-Bar-Harry-Potter/blob/master/assets/hp-image.PNG?raw=true)
